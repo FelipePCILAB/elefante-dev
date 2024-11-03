@@ -1,0 +1,64 @@
+enum Estados {
+  ACRE
+  ALAGOAS
+  AMAPA
+  AMAZONAS
+  BAHIA
+  CEARA
+  DISTRITO_FEDERAL
+  ESPIRITO_SANTO
+  GOIAS
+  MARANHAO
+  MATO_GROSSO_SUL
+  MATO_GROSSO
+  MINAS_GERAIS
+  PARA
+  PARAIBA
+  PARANA
+  PERNAMBUCO
+  PIAUI
+  RIO_DE_JANEIRO
+  RIO_GRANDE_SUL
+  RONDONIA
+  RORAIMA
+  SANTA_CATARINA
+  SAO_PAULO
+  SERGIPE
+  TOCANTINS
+}
+
+enum Status {
+  ATIVO
+  INATIVO
+  NOVO
+  INADIMPLENTE
+  ATIVO_MENSAL
+}
+
+type FichaCadastral @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  razaoSocial_Nome: String!
+  nomeFantasia: String
+  cnpjCpf: String
+  ieRg: String
+  especialidade: String
+  registroClasse: String
+  enderecoCompleto: String!
+  bairro: String
+  cep: String
+  cidade: String!
+  estado: Estados!
+  telefoneFixo: String!
+  telefoneCelular: String
+  emailGeral: AWSEmail
+  responsavelCompras: String
+  telefoneCompras: String
+  emailCompras: AWSEmail
+  responsavelPagamentos: String
+  telefonePagamenos: String
+  emailPagamentos: String
+  dataUltimaCompra: AWSDate
+  statusCliente: Status
+  notas: String
+}
+ 
