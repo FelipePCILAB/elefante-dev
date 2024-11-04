@@ -42,69 +42,54 @@ function App() {
       </Flex>
       
       <Flex overflow={'auto'} justifyContent="center">
-        <PerfilMedicoCollection overflow={'auto'} overrideItems={({item}) => ({onClick: () => setSelection(item)
-        })}/>
-      </Flex>
-
-      <Flex justifyContent="center">
-        <Divider orientation="horizontal" />
         {
-          selection && 
-          <Heading
-              level={5}>
-              Edição:
-          </Heading> 
-        }
-        {
-          selection &&
-          <Divider orientation="horizontal" />
-        }
-        
-      </Flex>
-      
-      <Flex position={'relative'} overflow={'hidden'} grow={1} justifyContent="center">
-        {selection &&
-          <FichaCadastralUpdateForm id={selection.id}
-                onSubmit={(fields) => {
-                  // Example function to trim all string inputs
-                  const updatedFields = {}
-                  Object.keys(fields).forEach(key => {
-                      if (typeof fields[key] === 'string') {
-                          updatedFields[key] = fields[key].trim()
-                      } else {
-                          updatedFields[key] = fields[key]
-                      }
-                  })
-                  alert('Atualização feita com sucesso!!')
-                  return updatedFields
-              }}
-                onCancel={(fields) => {
-                  const updatedFields = {}
-                  alert('Edição cancelada!!')
-                  return window.location.reload();
-              }}
-                onSuccess={(fields) => {
-                const updatedFields = {}
-                return window.location.reload();
-            }}
-
-          />	 
+          !selection && !isOpen &&
+            <PerfilMedicoCollection overflow={'auto'} overrideItems={({item}) => ({onClick: () => setSelection(item)
+            })}/>
         }
 
-        {isOpen &&
-          <FichaCadastralCreateForm
-              onCancel={(fields) => {
-                const updatedFields = {}
-                alert('Novo cadastro cancelado!!')
-                return window.location.reload();
-            }}
-              onSuccess={(fields) => {
-                const updatedFields = {}
-                return window.location.reload();
-            }}
+                {selection &&
+                  <FichaCadastralUpdateForm id={selection.id}
+                        onSubmit={(fields) => {
+                          // Example function to trim all string inputs
+                          const updatedFields = {}
+                          Object.keys(fields).forEach(key => {
+                              if (typeof fields[key] === 'string') {
+                                  updatedFields[key] = fields[key].trim()
+                              } else {
+                                  updatedFields[key] = fields[key]
+                              }
+                          })
+                          alert('Atualização feita com sucesso!!')
+                          return updatedFields
+                      }}
+                        onCancel={(fields) => {
+                          const updatedFields = {}
+                          alert('Edição cancelada!!')
+                          return window.location.reload();
+                      }}
+                        onSuccess={(fields) => {
+                        const updatedFields = {}
+                        return window.location.reload();
+                    }}
 
-          />
-        }
+                  />	 
+                }
+
+                {isOpen && !selection &&
+                  <FichaCadastralCreateForm
+                      onCancel={(fields) => {
+                        const updatedFields = {}
+                        alert('Novo cadastro cancelado!!')
+                        return window.location.reload();
+                    }}
+                      onSuccess={(fields) => {
+                        const updatedFields = {}
+                        return window.location.reload();
+                    }}
+
+                  />
+                }
       </Flex>
     </div>	
 
