@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Flex, Text, Divider, Heading } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import {
@@ -22,10 +22,6 @@ function App() {
   const [selection, setSelection] = useState()
   const [isOpen, setOpen] = useState();
 
-  /*const handleClick = () => {
-    setOpen(!isOpen);
-
-  };*/
   //console.log(selection)
 
   return (
@@ -46,7 +42,7 @@ function App() {
       </Flex>
       
       <Flex overflow={'auto'} justifyContent="center">
-        <PerfilMedicoCollection overflow={'auto'} overrideItems={({item}) => ({onClick: () => setSelection(item) 
+        <PerfilMedicoCollection overflow={'auto'} overrideItems={({item}) => ({onClick: () => setSelection(item)
         })}/>
       </Flex>
 
@@ -82,22 +78,31 @@ function App() {
                   alert('Atualização feita com sucesso!!')
                   return updatedFields
               }}
-              onCancel={(fields) => {
+                onCancel={(fields) => {
+                  const updatedFields = {}
+                  alert('Edição cancelada!!')
+                  return window.location.reload();
+              }}
+                onSuccess={(fields) => {
                 const updatedFields = {}
-                alert('Edição cancelada!!')
                 return window.location.reload();
             }}
+
           />	 
         }
 
-        {
-          isOpen &&
+        {isOpen &&
           <FichaCadastralCreateForm
               onCancel={(fields) => {
                 const updatedFields = {}
                 alert('Novo cadastro cancelado!!')
                 return window.location.reload();
             }}
+              onSuccess={(fields) => {
+                const updatedFields = {}
+                return window.location.reload();
+            }}
+
           />
         }
       </Flex>
