@@ -10,7 +10,9 @@ import {
   Button,
   Flex,
   Grid,
+  Heading,
   SelectField,
+  TextAreaField,
   TextField,
 } from "@aws-amplify/ui-react";
 import { FichaCadastral } from "../models";
@@ -50,6 +52,7 @@ export default function FichaCadastralCreateForm(props) {
     telefonePagamenos: "",
     emailPagamentos: "",
     dataUltimaCompra: "",
+    valorUltimaCompra: "",
     statusCliente: "",
     notas: "",
   };
@@ -102,6 +105,9 @@ export default function FichaCadastralCreateForm(props) {
   const [dataUltimaCompra, setDataUltimaCompra] = React.useState(
     initialValues.dataUltimaCompra
   );
+  const [valorUltimaCompra, setValorUltimaCompra] = React.useState(
+    initialValues.valorUltimaCompra
+  );
   const [statusCliente, setStatusCliente] = React.useState(
     initialValues.statusCliente
   );
@@ -129,6 +135,7 @@ export default function FichaCadastralCreateForm(props) {
     setTelefonePagamenos(initialValues.telefonePagamenos);
     setEmailPagamentos(initialValues.emailPagamentos);
     setDataUltimaCompra(initialValues.dataUltimaCompra);
+    setValorUltimaCompra(initialValues.valorUltimaCompra);
     setStatusCliente(initialValues.statusCliente);
     setNotas(initialValues.notas);
     setErrors({});
@@ -155,6 +162,7 @@ export default function FichaCadastralCreateForm(props) {
     telefonePagamenos: [],
     emailPagamentos: [],
     dataUltimaCompra: [],
+    valorUltimaCompra: [],
     statusCliente: [],
     notas: [],
   };
@@ -205,6 +213,7 @@ export default function FichaCadastralCreateForm(props) {
           telefonePagamenos,
           emailPagamentos,
           dataUltimaCompra,
+          valorUltimaCompra,
           statusCliente,
           notas,
         };
@@ -252,6 +261,10 @@ export default function FichaCadastralCreateForm(props) {
       {...getOverrideProps(overrides, "FichaCadastralCreateForm")}
       {...rest}
     >
+      <Heading
+        children="Formulário de Criação de Cadastro"
+        {...getOverrideProps(overrides, "SectionalElement0")}
+      ></Heading>
       <TextField
         label={
           <span style={{ display: "inline-flex" }}>
@@ -287,6 +300,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -333,6 +347,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -379,6 +394,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -425,6 +441,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -471,6 +488,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -517,6 +535,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -568,6 +587,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -614,6 +634,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -660,6 +681,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -711,6 +733,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -757,6 +780,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -939,6 +963,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -985,6 +1010,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -1031,6 +1057,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -1077,6 +1104,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -1125,6 +1153,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -1171,6 +1200,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -1217,6 +1247,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -1265,6 +1296,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos: value,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -1313,6 +1345,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos: value,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -1360,6 +1393,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra: value,
+              valorUltimaCompra,
               statusCliente,
               notas,
             };
@@ -1375,6 +1409,60 @@ export default function FichaCadastralCreateForm(props) {
         errorMessage={errors.dataUltimaCompra?.errorMessage}
         hasError={errors.dataUltimaCompra?.hasError}
         {...getOverrideProps(overrides, "dataUltimaCompra")}
+      ></TextField>
+      <TextField
+        label="Valor Última Compra R$:"
+        isRequired={false}
+        isReadOnly={false}
+        placeholder="R$"
+        type="number"
+        step="any"
+        value={valorUltimaCompra}
+        onChange={(e) => {
+          let value = isNaN(parseFloat(e.target.value))
+            ? e.target.value
+            : parseFloat(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              razaoSocial_Nome,
+              nomeFantasia,
+              cnpjCpf,
+              ieRg,
+              especialidade,
+              registroClasse,
+              enderecoCompleto,
+              bairro,
+              cep,
+              cidade,
+              estado,
+              telefoneFixo,
+              telefoneCelular,
+              emailGeral,
+              responsavelCompras,
+              telefoneCompras,
+              emailCompras,
+              responsavelPagamentos,
+              telefonePagamenos,
+              emailPagamentos,
+              dataUltimaCompra,
+              valorUltimaCompra: value,
+              statusCliente,
+              notas,
+            };
+            const result = onChange(modelFields);
+            value = result?.valorUltimaCompra ?? value;
+          }
+          if (errors.valorUltimaCompra?.hasError) {
+            runValidationTasks("valorUltimaCompra", value);
+          }
+          setValorUltimaCompra(value);
+        }}
+        onBlur={() =>
+          runValidationTasks("valorUltimaCompra", valorUltimaCompra)
+        }
+        errorMessage={errors.valorUltimaCompra?.errorMessage}
+        hasError={errors.valorUltimaCompra?.hasError}
+        {...getOverrideProps(overrides, "valorUltimaCompra")}
       ></TextField>
       <SelectField
         label="Status Cliente"
@@ -1406,6 +1494,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente: value,
               notas,
             };
@@ -1448,11 +1537,10 @@ export default function FichaCadastralCreateForm(props) {
           {...getOverrideProps(overrides, "statusClienteoption4")}
         ></option>
       </SelectField>
-      <TextField
+      <TextAreaField
         label="Notas"
         isRequired={false}
         isReadOnly={false}
-        value={notas}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -1478,6 +1566,7 @@ export default function FichaCadastralCreateForm(props) {
               telefonePagamenos,
               emailPagamentos,
               dataUltimaCompra,
+              valorUltimaCompra,
               statusCliente,
               notas: value,
             };
@@ -1493,7 +1582,7 @@ export default function FichaCadastralCreateForm(props) {
         errorMessage={errors.notas?.errorMessage}
         hasError={errors.notas?.hasError}
         {...getOverrideProps(overrides, "notas")}
-      ></TextField>
+      ></TextAreaField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}

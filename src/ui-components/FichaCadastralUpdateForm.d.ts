@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { GridProps, SelectFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { GridProps, HeadingProps, SelectFieldProps, TextAreaFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
 import { FichaCadastral } from "../models";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -44,6 +44,7 @@ export declare type FichaCadastralUpdateFormInputValues = {
     telefonePagamenos?: string;
     emailPagamentos?: string;
     dataUltimaCompra?: string;
+    valorUltimaCompra?: number;
     statusCliente?: string;
     notas?: string;
 };
@@ -69,12 +70,14 @@ export declare type FichaCadastralUpdateFormValidationValues = {
     telefonePagamenos?: ValidationFunction<string>;
     emailPagamentos?: ValidationFunction<string>;
     dataUltimaCompra?: ValidationFunction<string>;
+    valorUltimaCompra?: ValidationFunction<number>;
     statusCliente?: ValidationFunction<string>;
     notas?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type FichaCadastralUpdateFormOverridesProps = {
     FichaCadastralUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
+    SectionalElement0?: PrimitiveOverrideProps<HeadingProps>;
     razaoSocial_Nome?: PrimitiveOverrideProps<TextFieldProps>;
     nomeFantasia?: PrimitiveOverrideProps<TextFieldProps>;
     cnpjCpf?: PrimitiveOverrideProps<TextFieldProps>;
@@ -96,8 +99,9 @@ export declare type FichaCadastralUpdateFormOverridesProps = {
     telefonePagamenos?: PrimitiveOverrideProps<TextFieldProps>;
     emailPagamentos?: PrimitiveOverrideProps<TextFieldProps>;
     dataUltimaCompra?: PrimitiveOverrideProps<TextFieldProps>;
+    valorUltimaCompra?: PrimitiveOverrideProps<TextFieldProps>;
     statusCliente?: PrimitiveOverrideProps<SelectFieldProps>;
-    notas?: PrimitiveOverrideProps<TextFieldProps>;
+    notas?: PrimitiveOverrideProps<TextAreaFieldProps>;
 } & EscapeHatchProps;
 export declare type FichaCadastralUpdateFormProps = React.PropsWithChildren<{
     overrides?: FichaCadastralUpdateFormOverridesProps | undefined | null;

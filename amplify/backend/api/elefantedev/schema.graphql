@@ -58,6 +58,7 @@ type FichaCadastral @model @auth(rules: [{allow: public}]) {
   telefonePagamenos: String
   emailPagamentos: String
   dataUltimaCompra: AWSDate
+  valorUltimaCompra: Float
   statusCliente: Status
   notas: String
 }

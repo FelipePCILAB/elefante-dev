@@ -16,6 +16,10 @@ import {
  import {
   PerfilMedicoCollection 
  } from './ui-components';
+ 
+ import {
+  NavBarHeader 
+ } from './ui-components';
 
 
 function App() {
@@ -27,6 +31,7 @@ function App() {
   return (
 
     <div className="App">
+
       <Flex direction="column">
         <Button isFullWidth={false}
             variation="primary"

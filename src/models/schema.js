@@ -159,6 +159,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "valorUltimaCompra": {
+                    "name": "valorUltimaCompra",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "statusCliente": {
                     "name": "statusCliente",
                     "isArray": false,
@@ -263,5 +270,5 @@ export const schema = {
     },
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "4db90b4aa5922be9fc66414a0d0d0fc9"
+    "version": "e743db1026d92c93413929be5fe8938c"
 };
