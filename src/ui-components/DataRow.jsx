@@ -6,15 +6,10 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps, useNavigateAction } from "./utils";
+import { getOverrideProps } from "./utils";
 import { Button, Flex, Text } from "@aws-amplify/ui-react";
 export default function DataRow(props) {
   const { fichaCadastral, overrides, ...rest } = props;
-  const buttonOnClick = useNavigateAction({
-    target: "_blank",
-    type: "url",
-    url: fichaCadastral?.updatedAt,
-  });
   return (
     <Flex
       gap="16px"
@@ -69,7 +64,9 @@ export default function DataRow(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={`${fichaCadastral?.cidade}${fichaCadastral?.enderecoCompleto}`}
+        children={`${fichaCadastral?.cidade}${" - "}${
+          fichaCadastral?.enderecoCompleto
+        }${" (\u00DAltima compra: "}${fichaCadastral?.dataUltimaCompra}${")"}`}
         {...getOverrideProps(overrides, "value")}
       ></Text>
       <Button
@@ -80,9 +77,6 @@ export default function DataRow(props) {
         isDisabled={false}
         variation="link"
         children="Editar"
-        onClick={() => {
-          buttonOnClick();
-        }}
         {...getOverrideProps(overrides, "Button")}
       ></Button>
     </Flex>

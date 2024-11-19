@@ -40,6 +40,7 @@ export default function ListaDadosCollection(props) {
       searchPlaceholder="Pesquisa"
       itemsPerPage={6}
       direction="column"
+      alignItems="stretch"
       justifyContent="center"
       items={items || []}
       {...getOverrideProps(overrides, "ListaDadosCollection")}
@@ -48,6 +49,9 @@ export default function ListaDadosCollection(props) {
       {(item, index) => (
         <DataRow
           fichaCadastral={item}
+          height="auto"
+          width="auto"
+          margin="0 0 0 0px"
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
         ></DataRow>
