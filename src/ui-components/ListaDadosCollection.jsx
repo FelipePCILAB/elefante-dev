@@ -38,7 +38,7 @@ export default function ListaDadosCollection(props) {
       isSearchable="true"
       isPaginated={true}
       searchPlaceholder="Pesquisa"
-      itemsPerPage={6}
+      itemsPerPage={9}
       direction="column"
       alignItems="stretch"
       justifyContent="center"

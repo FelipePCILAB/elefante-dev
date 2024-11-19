@@ -1556,7 +1556,7 @@ export default function FichaCadastralUpdateForm(props) {
         ></option>
       </SelectField>
       <TextAreaField
-        label="Notas"
+        label="Notas:"
         isRequired={false}
         isReadOnly={false}
         value={notas}

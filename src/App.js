@@ -119,7 +119,7 @@ function App() {
               gap={tokens.space.xs}
             >
               <Text as="span" color={tokens.colors.blue[40]}>
-                Versão: 1.4 by PCILAB Tecnologia LTDA.
+                Versão: 1.5 by PCILAB Tecnologia LTDA.
               </Text>
             </Flex>
           </Flex>
