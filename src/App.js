@@ -9,8 +9,11 @@ import {
   Image,
   Badge,
   View,
-  useTheme,
-} from "@aws-amplify/ui-react";
+  useTheme} from "@aws-amplify/ui-react";
+
+  import "@fontsource-variable/inter"; // Defaults to wght axis
+  import "@fontsource-variable/inter/wght.css"; // Specify axis
+  import "@fontsource-variable/inter/wght-italic.css"; // Specify axis and styl
 
 import { FichaCadastralCreateForm } from "./ui-components";
 
@@ -95,6 +98,7 @@ function App() {
             }}
             onSuccess={(fields) => {
               const updatedFields = {};
+              alert("Cadastro registrado com sucesso!!");
               return window.location.reload();
             }}
           />
@@ -107,21 +111,10 @@ function App() {
         padding={tokens.space.medium}
       >
         <Card backgroundColor={tokens.colors.background.secondary}>
-          <Flex direction="row" alignItems="flex-start">
-            <Image
-              //alt="Road to milford sound"
-              src=""
-              width="33%"
-            />
-            <Flex
-              direction="column"
-              alignItems="flex-start"
-              gap={tokens.space.xs}
-            >
+          <Flex justifyContent="center" alignItems="center" alignContent="center">
               <Text as="span" color={tokens.colors.blue[40]}>
-                Versão: 1.5 by PCILAB Tecnologia LTDA.
+                Versão: 1.6 by PCILAB Tecnologia LTDA.
               </Text>
-            </Flex>
           </Flex>
         </Card>
       </View>
