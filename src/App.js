@@ -9,17 +9,23 @@ import {
   Image,
   Badge,
   View,
-  useTheme} from "@aws-amplify/ui-react";
+  useTheme,
+  SwitchField,
+} from "@aws-amplify/ui-react";
 
-  import "@fontsource-variable/inter"; // Defaults to wght axis
-  import "@fontsource-variable/inter/wght.css"; // Specify axis
-  import "@fontsource-variable/inter/wght-italic.css"; // Specify axis and styl
+import "@fontsource-variable/inter"; // Defaults to wght axis
+import "@fontsource-variable/inter/wght.css"; // Specify axis
+import "@fontsource-variable/inter/wght-italic.css"; // Specify axis and styl
 
 import { FichaCadastralCreateForm } from "./ui-components";
 
 import { FichaCadastralUpdateForm } from "./ui-components";
 
 import { ListaDadosCollection } from "./ui-components";
+
+import { NewCreateForm1 } from "./ui-components";
+
+import { NewUpdateForm1 } from './ui-components';
 
 import { PerfilMedicoCollection } from "./ui-components";
 
@@ -62,7 +68,7 @@ function App() {
         )}
 
         {selection && (
-          <FichaCadastralUpdateForm
+          <NewUpdateForm1
             id={selection.id}
             onSubmit={(fields) => {
               // Example function to trim all string inputs
@@ -90,7 +96,7 @@ function App() {
         )}
 
         {isOpen && !selection && (
-          <FichaCadastralCreateForm
+          <NewCreateForm1
             onCancel={(fields) => {
               const updatedFields = {};
               alert("Novo cadastro cancelado!!");
@@ -111,10 +117,14 @@ function App() {
         padding={tokens.space.medium}
       >
         <Card backgroundColor={tokens.colors.background.secondary}>
-          <Flex justifyContent="center" alignItems="center" alignContent="center">
-              <Text as="span" color={tokens.colors.blue[40]}>
-                Versão: 1.6 by PCILAB Tecnologia LTDA.
-              </Text>
+          <Flex
+            justifyContent="center"
+            alignItems="center"
+            alignContent="center"
+          >
+            <Text as="span" color={tokens.colors.blue[40]}>
+              Elefante Cadastral: 1.7 by PCILAB Tecnologia LTDA.
+            </Text>
           </Flex>
         </Card>
       </View>

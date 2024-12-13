@@ -51,6 +51,7 @@ export default function FichaCadastralCreateForm(props) {
     responsavelPagamentos: "",
     telefonePagamenos: "",
     emailPagamentos: "",
+    dataVisita: "",
     dataUltimaCompra: "",
     valorUltimaCompra: "",
     statusCliente: "",
@@ -102,6 +103,7 @@ export default function FichaCadastralCreateForm(props) {
   const [emailPagamentos, setEmailPagamentos] = React.useState(
     initialValues.emailPagamentos
   );
+  const [dataVisita, setDataVisita] = React.useState(initialValues.dataVisita);
   const [dataUltimaCompra, setDataUltimaCompra] = React.useState(
     initialValues.dataUltimaCompra
   );
@@ -134,6 +136,7 @@ export default function FichaCadastralCreateForm(props) {
     setResponsavelPagamentos(initialValues.responsavelPagamentos);
     setTelefonePagamenos(initialValues.telefonePagamenos);
     setEmailPagamentos(initialValues.emailPagamentos);
+    setDataVisita(initialValues.dataVisita);
     setDataUltimaCompra(initialValues.dataUltimaCompra);
     setValorUltimaCompra(initialValues.valorUltimaCompra);
     setStatusCliente(initialValues.statusCliente);
@@ -161,6 +164,7 @@ export default function FichaCadastralCreateForm(props) {
     responsavelPagamentos: [],
     telefonePagamenos: [],
     emailPagamentos: [],
+    dataVisita: [],
     dataUltimaCompra: [],
     valorUltimaCompra: [],
     statusCliente: [],
@@ -212,6 +216,7 @@ export default function FichaCadastralCreateForm(props) {
           responsavelPagamentos,
           telefonePagamenos,
           emailPagamentos,
+          dataVisita,
           dataUltimaCompra,
           valorUltimaCompra,
           statusCliente,
@@ -299,6 +304,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -346,6 +352,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -393,6 +400,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -440,6 +448,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -487,6 +496,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -534,6 +544,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -586,6 +597,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -633,6 +645,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -680,6 +693,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -732,6 +746,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -779,6 +794,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -962,6 +978,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -1009,6 +1026,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -1056,6 +1074,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -1103,6 +1122,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -1152,6 +1172,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -1199,6 +1220,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -1246,6 +1268,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos: value,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -1295,6 +1318,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos: value,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -1344,6 +1368,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos: value,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,
@@ -1363,7 +1388,56 @@ export default function FichaCadastralCreateForm(props) {
         {...getOverrideProps(overrides, "emailPagamentos")}
       ></TextField>
       <TextField
-        label="Data ultima compra"
+        label="Data da Visita:"
+        isRequired={false}
+        isReadOnly={false}
+        type="date"
+        value={dataVisita}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              razaoSocial_Nome,
+              nomeFantasia,
+              cnpjCpf,
+              ieRg,
+              especialidade,
+              registroClasse,
+              enderecoCompleto,
+              bairro,
+              cep,
+              cidade,
+              estado,
+              telefoneFixo,
+              telefoneCelular,
+              emailGeral,
+              responsavelCompras,
+              telefoneCompras,
+              emailCompras,
+              responsavelPagamentos,
+              telefonePagamenos,
+              emailPagamentos,
+              dataVisita: value,
+              dataUltimaCompra,
+              valorUltimaCompra,
+              statusCliente,
+              notas,
+            };
+            const result = onChange(modelFields);
+            value = result?.dataVisita ?? value;
+          }
+          if (errors.dataVisita?.hasError) {
+            runValidationTasks("dataVisita", value);
+          }
+          setDataVisita(value);
+        }}
+        onBlur={() => runValidationTasks("dataVisita", dataVisita)}
+        errorMessage={errors.dataVisita?.errorMessage}
+        hasError={errors.dataVisita?.hasError}
+        {...getOverrideProps(overrides, "dataVisita")}
+      ></TextField>
+      <TextField
+        label="Data Última Compra:"
         isRequired={false}
         isReadOnly={false}
         type="date"
@@ -1392,6 +1466,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra: value,
               valorUltimaCompra,
               statusCliente,
@@ -1444,6 +1519,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra: value,
               statusCliente,
@@ -1465,7 +1541,7 @@ export default function FichaCadastralCreateForm(props) {
         {...getOverrideProps(overrides, "valorUltimaCompra")}
       ></TextField>
       <SelectField
-        label="Status Cliente"
+        label="Status Cliente:"
         placeholder="Por favor selecione uma opção (clique na seta)"
         isDisabled={false}
         value={statusCliente}
@@ -1493,6 +1569,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente: value,
@@ -1565,6 +1642,7 @@ export default function FichaCadastralCreateForm(props) {
               responsavelPagamentos,
               telefonePagamenos,
               emailPagamentos,
+              dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
               statusCliente,

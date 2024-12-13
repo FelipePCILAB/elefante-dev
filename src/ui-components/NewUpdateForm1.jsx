@@ -18,7 +18,7 @@ import {
 import { FichaCadastral } from "../models";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { DataStore } from "aws-amplify/datastore";
-export default function FichaCadastralUpdateForm(props) {
+export default function NewUpdateForm1(props) {
   const {
     id: idProp,
     fichaCadastral: fichaCadastralModelProp,
@@ -34,24 +34,16 @@ export default function FichaCadastralUpdateForm(props) {
   const initialValues = {
     razaoSocial_Nome: "",
     nomeFantasia: "",
-    cnpjCpf: "",
-    ieRg: "",
     especialidade: "",
     registroClasse: "",
     enderecoCompleto: "",
-    bairro: "",
-    cep: "",
     cidade: "",
     estado: "",
     telefoneFixo: "",
     telefoneCelular: "",
     emailGeral: "",
     responsavelCompras: "",
-    telefoneCompras: "",
-    emailCompras: "",
     responsavelPagamentos: "",
-    telefonePagamenos: "",
-    emailPagamentos: "",
     dataVisita: "",
     dataUltimaCompra: "",
     valorUltimaCompra: "",
@@ -64,8 +56,6 @@ export default function FichaCadastralUpdateForm(props) {
   const [nomeFantasia, setNomeFantasia] = React.useState(
     initialValues.nomeFantasia
   );
-  const [cnpjCpf, setCnpjCpf] = React.useState(initialValues.cnpjCpf);
-  const [ieRg, setIeRg] = React.useState(initialValues.ieRg);
   const [especialidade, setEspecialidade] = React.useState(
     initialValues.especialidade
   );
@@ -75,8 +65,6 @@ export default function FichaCadastralUpdateForm(props) {
   const [enderecoCompleto, setEnderecoCompleto] = React.useState(
     initialValues.enderecoCompleto
   );
-  const [bairro, setBairro] = React.useState(initialValues.bairro);
-  const [cep, setCep] = React.useState(initialValues.cep);
   const [cidade, setCidade] = React.useState(initialValues.cidade);
   const [estado, setEstado] = React.useState(initialValues.estado);
   const [telefoneFixo, setTelefoneFixo] = React.useState(
@@ -89,20 +77,8 @@ export default function FichaCadastralUpdateForm(props) {
   const [responsavelCompras, setResponsavelCompras] = React.useState(
     initialValues.responsavelCompras
   );
-  const [telefoneCompras, setTelefoneCompras] = React.useState(
-    initialValues.telefoneCompras
-  );
-  const [emailCompras, setEmailCompras] = React.useState(
-    initialValues.emailCompras
-  );
   const [responsavelPagamentos, setResponsavelPagamentos] = React.useState(
     initialValues.responsavelPagamentos
-  );
-  const [telefonePagamenos, setTelefonePagamenos] = React.useState(
-    initialValues.telefonePagamenos
-  );
-  const [emailPagamentos, setEmailPagamentos] = React.useState(
-    initialValues.emailPagamentos
   );
   const [dataVisita, setDataVisita] = React.useState(initialValues.dataVisita);
   const [dataUltimaCompra, setDataUltimaCompra] = React.useState(
@@ -122,24 +98,16 @@ export default function FichaCadastralUpdateForm(props) {
       : initialValues;
     setRazaoSocial_Nome(cleanValues.razaoSocial_Nome);
     setNomeFantasia(cleanValues.nomeFantasia);
-    setCnpjCpf(cleanValues.cnpjCpf);
-    setIeRg(cleanValues.ieRg);
     setEspecialidade(cleanValues.especialidade);
     setRegistroClasse(cleanValues.registroClasse);
     setEnderecoCompleto(cleanValues.enderecoCompleto);
-    setBairro(cleanValues.bairro);
-    setCep(cleanValues.cep);
     setCidade(cleanValues.cidade);
     setEstado(cleanValues.estado);
     setTelefoneFixo(cleanValues.telefoneFixo);
     setTelefoneCelular(cleanValues.telefoneCelular);
     setEmailGeral(cleanValues.emailGeral);
     setResponsavelCompras(cleanValues.responsavelCompras);
-    setTelefoneCompras(cleanValues.telefoneCompras);
-    setEmailCompras(cleanValues.emailCompras);
     setResponsavelPagamentos(cleanValues.responsavelPagamentos);
-    setTelefonePagamenos(cleanValues.telefonePagamenos);
-    setEmailPagamentos(cleanValues.emailPagamentos);
     setDataVisita(cleanValues.dataVisita);
     setDataUltimaCompra(cleanValues.dataUltimaCompra);
     setValorUltimaCompra(cleanValues.valorUltimaCompra);
@@ -163,24 +131,16 @@ export default function FichaCadastralUpdateForm(props) {
   const validations = {
     razaoSocial_Nome: [{ type: "Required" }],
     nomeFantasia: [],
-    cnpjCpf: [],
-    ieRg: [],
     especialidade: [],
     registroClasse: [],
     enderecoCompleto: [{ type: "Required" }],
-    bairro: [],
-    cep: [],
     cidade: [{ type: "Required" }],
     estado: [{ type: "Required" }],
     telefoneFixo: [{ type: "Required" }],
     telefoneCelular: [],
     emailGeral: [{ type: "Email" }],
     responsavelCompras: [],
-    telefoneCompras: [],
-    emailCompras: [{ type: "Email" }],
     responsavelPagamentos: [],
-    telefonePagamenos: [],
-    emailPagamentos: [],
     dataVisita: [],
     dataUltimaCompra: [],
     valorUltimaCompra: [],
@@ -207,32 +167,24 @@ export default function FichaCadastralUpdateForm(props) {
   return (
     <Grid
       as="form"
-      rowGap="10px"
-      columnGap="10px"
+      rowGap="15px"
+      columnGap="15px"
       padding="20px"
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
           razaoSocial_Nome,
           nomeFantasia,
-          cnpjCpf,
-          ieRg,
           especialidade,
           registroClasse,
           enderecoCompleto,
-          bairro,
-          cep,
           cidade,
           estado,
           telefoneFixo,
           telefoneCelular,
           emailGeral,
           responsavelCompras,
-          telefoneCompras,
-          emailCompras,
           responsavelPagamentos,
-          telefonePagamenos,
-          emailPagamentos,
           dataVisita,
           dataUltimaCompra,
           valorUltimaCompra,
@@ -281,20 +233,53 @@ export default function FichaCadastralUpdateForm(props) {
           }
         }
       }}
-      {...getOverrideProps(overrides, "FichaCadastralUpdateForm")}
+      {...getOverrideProps(overrides, "NewUpdateForm1")}
       {...rest}
     >
+      <Flex
+        justifyContent="space-between"
+        {...getOverrideProps(overrides, "CTAFlex")}
+      >
+        <Button
+          children="LIMPAR DADOS"
+          type="reset"
+          onClick={(event) => {
+            event.preventDefault();
+            resetStateValues();
+          }}
+          isDisabled={!(idProp || fichaCadastralModelProp)}
+          {...getOverrideProps(overrides, "ResetButton")}
+        ></Button>
+        <Flex
+          gap="15px"
+          {...getOverrideProps(overrides, "RightAlignCTASubFlex")}
+        >
+          <Button
+            children="CANCELAR"
+            type="button"
+            onClick={() => {
+              onCancel && onCancel();
+            }}
+            {...getOverrideProps(overrides, "CancelButton")}
+          ></Button>
+          <Button
+            children="SALVAR"
+            type="submit"
+            variation="primary"
+            isDisabled={
+              !(idProp || fichaCadastralModelProp) ||
+              Object.values(errors).some((e) => e?.hasError)
+            }
+            {...getOverrideProps(overrides, "SubmitButton")}
+          ></Button>
+        </Flex>
+      </Flex>
       <Heading
-        children="Formulário de Edição de Cadastro"
+        children="Formulário de Atualização Cadastral (Soft)"
         {...getOverrideProps(overrides, "SectionalElement0")}
       ></Heading>
       <TextField
-        label={
-          <span style={{ display: "inline-flex" }}>
-            <span>Razão Social / Nome:</span>
-            <span style={{ color: "red" }}>*</span>
-          </span>
-        }
+        label="Razao Social / Nome:*"
         isRequired={true}
         isReadOnly={false}
         value={razaoSocial_Nome}
@@ -304,24 +289,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome: value,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -352,24 +329,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia: value,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -390,102 +359,6 @@ export default function FichaCadastralUpdateForm(props) {
         {...getOverrideProps(overrides, "nomeFantasia")}
       ></TextField>
       <TextField
-        label="CNPJ / CPF:"
-        isRequired={false}
-        isReadOnly={false}
-        value={cnpjCpf}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              razaoSocial_Nome,
-              nomeFantasia,
-              cnpjCpf: value,
-              ieRg,
-              especialidade,
-              registroClasse,
-              enderecoCompleto,
-              bairro,
-              cep,
-              cidade,
-              estado,
-              telefoneFixo,
-              telefoneCelular,
-              emailGeral,
-              responsavelCompras,
-              telefoneCompras,
-              emailCompras,
-              responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
-              dataVisita,
-              dataUltimaCompra,
-              valorUltimaCompra,
-              statusCliente,
-              notas,
-            };
-            const result = onChange(modelFields);
-            value = result?.cnpjCpf ?? value;
-          }
-          if (errors.cnpjCpf?.hasError) {
-            runValidationTasks("cnpjCpf", value);
-          }
-          setCnpjCpf(value);
-        }}
-        onBlur={() => runValidationTasks("cnpjCpf", cnpjCpf)}
-        errorMessage={errors.cnpjCpf?.errorMessage}
-        hasError={errors.cnpjCpf?.hasError}
-        {...getOverrideProps(overrides, "cnpjCpf")}
-      ></TextField>
-      <TextField
-        label="I.E / RG:"
-        isRequired={false}
-        isReadOnly={false}
-        value={ieRg}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              razaoSocial_Nome,
-              nomeFantasia,
-              cnpjCpf,
-              ieRg: value,
-              especialidade,
-              registroClasse,
-              enderecoCompleto,
-              bairro,
-              cep,
-              cidade,
-              estado,
-              telefoneFixo,
-              telefoneCelular,
-              emailGeral,
-              responsavelCompras,
-              telefoneCompras,
-              emailCompras,
-              responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
-              dataVisita,
-              dataUltimaCompra,
-              valorUltimaCompra,
-              statusCliente,
-              notas,
-            };
-            const result = onChange(modelFields);
-            value = result?.ieRg ?? value;
-          }
-          if (errors.ieRg?.hasError) {
-            runValidationTasks("ieRg", value);
-          }
-          setIeRg(value);
-        }}
-        onBlur={() => runValidationTasks("ieRg", ieRg)}
-        errorMessage={errors.ieRg?.errorMessage}
-        hasError={errors.ieRg?.hasError}
-        {...getOverrideProps(overrides, "ieRg")}
-      ></TextField>
-      <TextField
         label="Especialidade:"
         isRequired={false}
         isReadOnly={false}
@@ -496,24 +369,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade: value,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -544,24 +409,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse: value,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -582,12 +439,7 @@ export default function FichaCadastralUpdateForm(props) {
         {...getOverrideProps(overrides, "registroClasse")}
       ></TextField>
       <TextField
-        label={
-          <span style={{ display: "inline-flex" }}>
-            <span>Endereco Completo:</span>
-            <span style={{ color: "red" }}>*</span>
-          </span>
-        }
+        label="Endereco Completo:"
         isRequired={true}
         isReadOnly={false}
         value={enderecoCompleto}
@@ -597,24 +449,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto: value,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -635,108 +479,7 @@ export default function FichaCadastralUpdateForm(props) {
         {...getOverrideProps(overrides, "enderecoCompleto")}
       ></TextField>
       <TextField
-        label="Bairro:"
-        isRequired={false}
-        isReadOnly={false}
-        value={bairro}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              razaoSocial_Nome,
-              nomeFantasia,
-              cnpjCpf,
-              ieRg,
-              especialidade,
-              registroClasse,
-              enderecoCompleto,
-              bairro: value,
-              cep,
-              cidade,
-              estado,
-              telefoneFixo,
-              telefoneCelular,
-              emailGeral,
-              responsavelCompras,
-              telefoneCompras,
-              emailCompras,
-              responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
-              dataVisita,
-              dataUltimaCompra,
-              valorUltimaCompra,
-              statusCliente,
-              notas,
-            };
-            const result = onChange(modelFields);
-            value = result?.bairro ?? value;
-          }
-          if (errors.bairro?.hasError) {
-            runValidationTasks("bairro", value);
-          }
-          setBairro(value);
-        }}
-        onBlur={() => runValidationTasks("bairro", bairro)}
-        errorMessage={errors.bairro?.errorMessage}
-        hasError={errors.bairro?.hasError}
-        {...getOverrideProps(overrides, "bairro")}
-      ></TextField>
-      <TextField
-        label="CEP:"
-        isRequired={false}
-        isReadOnly={false}
-        value={cep}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              razaoSocial_Nome,
-              nomeFantasia,
-              cnpjCpf,
-              ieRg,
-              especialidade,
-              registroClasse,
-              enderecoCompleto,
-              bairro,
-              cep: value,
-              cidade,
-              estado,
-              telefoneFixo,
-              telefoneCelular,
-              emailGeral,
-              responsavelCompras,
-              telefoneCompras,
-              emailCompras,
-              responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
-              dataVisita,
-              dataUltimaCompra,
-              valorUltimaCompra,
-              statusCliente,
-              notas,
-            };
-            const result = onChange(modelFields);
-            value = result?.cep ?? value;
-          }
-          if (errors.cep?.hasError) {
-            runValidationTasks("cep", value);
-          }
-          setCep(value);
-        }}
-        onBlur={() => runValidationTasks("cep", cep)}
-        errorMessage={errors.cep?.errorMessage}
-        hasError={errors.cep?.hasError}
-        {...getOverrideProps(overrides, "cep")}
-      ></TextField>
-      <TextField
-        label={
-          <span style={{ display: "inline-flex" }}>
-            <span>Cidade:</span>
-            <span style={{ color: "red" }}>*</span>
-          </span>
-        }
+        label="Cidade:"
         isRequired={true}
         isReadOnly={false}
         value={cidade}
@@ -746,24 +489,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade: value,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -794,24 +529,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado: value,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -963,12 +690,7 @@ export default function FichaCadastralUpdateForm(props) {
         ></option>
       </SelectField>
       <TextField
-        label={
-          <span style={{ display: "inline-flex" }}>
-            <span>Telefone fixo:</span>
-            <span style={{ color: "red" }}>*</span>
-          </span>
-        }
+        label="Telefone fixo:"
         isRequired={true}
         isReadOnly={false}
         value={telefoneFixo}
@@ -978,24 +700,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo: value,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -1026,24 +740,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular: value,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -1074,24 +780,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral: value,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -1122,24 +820,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras: value,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -1162,102 +852,6 @@ export default function FichaCadastralUpdateForm(props) {
         {...getOverrideProps(overrides, "responsavelCompras")}
       ></TextField>
       <TextField
-        label="Telefone Compras:"
-        isRequired={false}
-        isReadOnly={false}
-        value={telefoneCompras}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              razaoSocial_Nome,
-              nomeFantasia,
-              cnpjCpf,
-              ieRg,
-              especialidade,
-              registroClasse,
-              enderecoCompleto,
-              bairro,
-              cep,
-              cidade,
-              estado,
-              telefoneFixo,
-              telefoneCelular,
-              emailGeral,
-              responsavelCompras,
-              telefoneCompras: value,
-              emailCompras,
-              responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
-              dataVisita,
-              dataUltimaCompra,
-              valorUltimaCompra,
-              statusCliente,
-              notas,
-            };
-            const result = onChange(modelFields);
-            value = result?.telefoneCompras ?? value;
-          }
-          if (errors.telefoneCompras?.hasError) {
-            runValidationTasks("telefoneCompras", value);
-          }
-          setTelefoneCompras(value);
-        }}
-        onBlur={() => runValidationTasks("telefoneCompras", telefoneCompras)}
-        errorMessage={errors.telefoneCompras?.errorMessage}
-        hasError={errors.telefoneCompras?.hasError}
-        {...getOverrideProps(overrides, "telefoneCompras")}
-      ></TextField>
-      <TextField
-        label="Email Compras:"
-        isRequired={false}
-        isReadOnly={false}
-        value={emailCompras}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              razaoSocial_Nome,
-              nomeFantasia,
-              cnpjCpf,
-              ieRg,
-              especialidade,
-              registroClasse,
-              enderecoCompleto,
-              bairro,
-              cep,
-              cidade,
-              estado,
-              telefoneFixo,
-              telefoneCelular,
-              emailGeral,
-              responsavelCompras,
-              telefoneCompras,
-              emailCompras: value,
-              responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
-              dataVisita,
-              dataUltimaCompra,
-              valorUltimaCompra,
-              statusCliente,
-              notas,
-            };
-            const result = onChange(modelFields);
-            value = result?.emailCompras ?? value;
-          }
-          if (errors.emailCompras?.hasError) {
-            runValidationTasks("emailCompras", value);
-          }
-          setEmailCompras(value);
-        }}
-        onBlur={() => runValidationTasks("emailCompras", emailCompras)}
-        errorMessage={errors.emailCompras?.errorMessage}
-        hasError={errors.emailCompras?.hasError}
-        {...getOverrideProps(overrides, "emailCompras")}
-      ></TextField>
-      <TextField
         label="Responsavel Pagamentos:"
         isRequired={false}
         isReadOnly={false}
@@ -1268,24 +862,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos: value,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -1308,104 +894,6 @@ export default function FichaCadastralUpdateForm(props) {
         {...getOverrideProps(overrides, "responsavelPagamentos")}
       ></TextField>
       <TextField
-        label="Telefone Pagamentos:"
-        isRequired={false}
-        isReadOnly={false}
-        value={telefonePagamenos}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              razaoSocial_Nome,
-              nomeFantasia,
-              cnpjCpf,
-              ieRg,
-              especialidade,
-              registroClasse,
-              enderecoCompleto,
-              bairro,
-              cep,
-              cidade,
-              estado,
-              telefoneFixo,
-              telefoneCelular,
-              emailGeral,
-              responsavelCompras,
-              telefoneCompras,
-              emailCompras,
-              responsavelPagamentos,
-              telefonePagamenos: value,
-              emailPagamentos,
-              dataVisita,
-              dataUltimaCompra,
-              valorUltimaCompra,
-              statusCliente,
-              notas,
-            };
-            const result = onChange(modelFields);
-            value = result?.telefonePagamenos ?? value;
-          }
-          if (errors.telefonePagamenos?.hasError) {
-            runValidationTasks("telefonePagamenos", value);
-          }
-          setTelefonePagamenos(value);
-        }}
-        onBlur={() =>
-          runValidationTasks("telefonePagamenos", telefonePagamenos)
-        }
-        errorMessage={errors.telefonePagamenos?.errorMessage}
-        hasError={errors.telefonePagamenos?.hasError}
-        {...getOverrideProps(overrides, "telefonePagamenos")}
-      ></TextField>
-      <TextField
-        label="Email Pagamentos:"
-        isRequired={false}
-        isReadOnly={false}
-        value={emailPagamentos}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              razaoSocial_Nome,
-              nomeFantasia,
-              cnpjCpf,
-              ieRg,
-              especialidade,
-              registroClasse,
-              enderecoCompleto,
-              bairro,
-              cep,
-              cidade,
-              estado,
-              telefoneFixo,
-              telefoneCelular,
-              emailGeral,
-              responsavelCompras,
-              telefoneCompras,
-              emailCompras,
-              responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos: value,
-              dataVisita,
-              dataUltimaCompra,
-              valorUltimaCompra,
-              statusCliente,
-              notas,
-            };
-            const result = onChange(modelFields);
-            value = result?.emailPagamentos ?? value;
-          }
-          if (errors.emailPagamentos?.hasError) {
-            runValidationTasks("emailPagamentos", value);
-          }
-          setEmailPagamentos(value);
-        }}
-        onBlur={() => runValidationTasks("emailPagamentos", emailPagamentos)}
-        errorMessage={errors.emailPagamentos?.errorMessage}
-        hasError={errors.emailPagamentos?.hasError}
-        {...getOverrideProps(overrides, "emailPagamentos")}
-      ></TextField>
-      <TextField
         label="Data da Visita:"
         isRequired={false}
         isReadOnly={false}
@@ -1417,24 +905,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita: value,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -1466,24 +946,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra: value,
               valorUltimaCompra,
@@ -1507,7 +979,6 @@ export default function FichaCadastralUpdateForm(props) {
         label="Valor Última Compra R$:"
         isRequired={false}
         isReadOnly={false}
-        placeholder="R$"
         type="number"
         step="any"
         value={valorUltimaCompra}
@@ -1519,24 +990,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra: value,
@@ -1560,7 +1023,7 @@ export default function FichaCadastralUpdateForm(props) {
       ></TextField>
       <SelectField
         label="Status Cliente:"
-        placeholder="Por favor selecione uma opção"
+        placeholder="Por favor selecione uma opção (clique na seta)"
         isDisabled={false}
         value={statusCliente}
         onChange={(e) => {
@@ -1569,24 +1032,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -1643,24 +1098,16 @@ export default function FichaCadastralUpdateForm(props) {
             const modelFields = {
               razaoSocial_Nome,
               nomeFantasia,
-              cnpjCpf,
-              ieRg,
               especialidade,
               registroClasse,
               enderecoCompleto,
-              bairro,
-              cep,
               cidade,
               estado,
               telefoneFixo,
               telefoneCelular,
               emailGeral,
               responsavelCompras,
-              telefoneCompras,
-              emailCompras,
               responsavelPagamentos,
-              telefonePagamenos,
-              emailPagamentos,
               dataVisita,
               dataUltimaCompra,
               valorUltimaCompra,
@@ -1685,7 +1132,7 @@ export default function FichaCadastralUpdateForm(props) {
         {...getOverrideProps(overrides, "CTAFlex")}
       >
         <Button
-          children="ORIGINAL"
+          children="LIMPAR DADOS"
           type="reset"
           onClick={(event) => {
             event.preventDefault();
@@ -1695,7 +1142,7 @@ export default function FichaCadastralUpdateForm(props) {
           {...getOverrideProps(overrides, "ResetButton")}
         ></Button>
         <Flex
-          gap="10px"
+          gap="15px"
           {...getOverrideProps(overrides, "RightAlignCTASubFlex")}
         >
           <Button

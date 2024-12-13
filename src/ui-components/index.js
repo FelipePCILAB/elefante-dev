@@ -30,6 +30,8 @@ export { default as MyIcon } from "./MyIcon";
 export { default as NavBarHeader } from "./NavBarHeader";
 export { default as NavBarHeader2 } from "./NavBarHeader2";
 export { default as NavBarSide } from "./NavBarSide";
+export { default as NewCreateForm1 } from "./NewCreateForm1";
+export { default as NewUpdateForm1 } from "./NewUpdateForm1";
 export { default as PerfilMedico } from "./PerfilMedico";
 export { default as PerfilMedicoCollection } from "./PerfilMedicoCollection";
 export { default as ProductCard } from "./ProductCard";

@@ -152,6 +152,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "dataVisita": {
+                    "name": "dataVisita",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "dataUltimaCompra": {
                     "name": "dataUltimaCompra",
                     "isArray": false,
@@ -270,5 +277,5 @@ export const schema = {
     },
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "e743db1026d92c93413929be5fe8938c"
+    "version": "02cb2c4b4b425ceee55b055da1420fe9"
 };

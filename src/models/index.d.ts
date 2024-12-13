@@ -67,6 +67,7 @@ type EagerFichaCadastral = {
   readonly responsavelPagamentos?: string | null;
   readonly telefonePagamenos?: string | null;
   readonly emailPagamentos?: string | null;
+  readonly dataVisita?: string | null;
   readonly dataUltimaCompra?: string | null;
   readonly valorUltimaCompra?: number | null;
   readonly statusCliente?: Status | keyof typeof Status | null;
@@ -101,6 +102,7 @@ type LazyFichaCadastral = {
   readonly responsavelPagamentos?: string | null;
   readonly telefonePagamenos?: string | null;
   readonly emailPagamentos?: string | null;
+  readonly dataVisita?: string | null;
   readonly dataUltimaCompra?: string | null;
   readonly valorUltimaCompra?: number | null;
   readonly statusCliente?: Status | keyof typeof Status | null;

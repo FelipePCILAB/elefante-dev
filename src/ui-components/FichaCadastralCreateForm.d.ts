@@ -42,6 +42,7 @@ export declare type FichaCadastralCreateFormInputValues = {
     responsavelPagamentos?: string;
     telefonePagamenos?: string;
     emailPagamentos?: string;
+    dataVisita?: string;
     dataUltimaCompra?: string;
     valorUltimaCompra?: number;
     statusCliente?: string;
@@ -68,6 +69,7 @@ export declare type FichaCadastralCreateFormValidationValues = {
     responsavelPagamentos?: ValidationFunction<string>;
     telefonePagamenos?: ValidationFunction<string>;
     emailPagamentos?: ValidationFunction<string>;
+    dataVisita?: ValidationFunction<string>;
     dataUltimaCompra?: ValidationFunction<string>;
     valorUltimaCompra?: ValidationFunction<number>;
     statusCliente?: ValidationFunction<string>;
@@ -97,6 +99,7 @@ export declare type FichaCadastralCreateFormOverridesProps = {
     responsavelPagamentos?: PrimitiveOverrideProps<TextFieldProps>;
     telefonePagamenos?: PrimitiveOverrideProps<TextFieldProps>;
     emailPagamentos?: PrimitiveOverrideProps<TextFieldProps>;
+    dataVisita?: PrimitiveOverrideProps<TextFieldProps>;
     dataUltimaCompra?: PrimitiveOverrideProps<TextFieldProps>;
     valorUltimaCompra?: PrimitiveOverrideProps<TextFieldProps>;
     statusCliente?: PrimitiveOverrideProps<SelectFieldProps>;
