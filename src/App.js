@@ -123,7 +123,7 @@ function App() {
             alignContent="center"
           >
             <Text as="span" color={tokens.colors.blue[40]}>
-              Elefante Cadastral: 1.7 by PCILAB Tecnologia LTDA.
+              Elefante Cadastral: 1.8 by PCILAB Tecnologia LTDA.
             </Text>
           </Flex>
         </Card>

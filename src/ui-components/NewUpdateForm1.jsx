@@ -852,7 +852,7 @@ export default function NewUpdateForm1(props) {
         {...getOverrideProps(overrides, "responsavelCompras")}
       ></TextField>
       <TextField
-        label="Responsavel Pagamentos:"
+        label="Secretária(s):"
         isRequired={false}
         isReadOnly={false}
         value={responsavelPagamentos}
